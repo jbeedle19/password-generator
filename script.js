@@ -25,7 +25,7 @@ var generatePassword = function() {
     else {
       // Goes through prompts to confirm what the password will contain
       var includeLowercase = window.confirm("Would you like your password to contain lowercase letters?");
-      var includeUppercase = window.confirm("Would you like your password to contain UPPERCASE lettes?");
+      var includeUppercase = window.confirm("Would you like your password to contain UPPERCASE letters?");
       var includeNumber = window.confirm("Would you like your password to contain numbers?");
       var includeCharacter = window.confirm("Would you like your password to contain characters");
     };
@@ -88,9 +88,19 @@ var generatePassword = function() {
       passwordOptions = characters;
     };
 
-    // Create array placeholder for what the length of the password will be
+    // Create variable for password and an array placeholder for what the length of the password will be
+    var pass = [];
+    
+    //Use Math.random to randomize password options/variables
+    for (i = 0; i < passwordLength; i++) {
+      var pickOptions = passwordOptions[Math.floor(Math.random() * passwordOptions.length)];
+      pass.push(pickOptions); 
+    }
 
-
+    // Join the password array and convert it into a string
+    var passJoin = password.join("");
+    writePassword(passJoin);
+    return passJoin;
 }
 
 // Get references to the #generate element
