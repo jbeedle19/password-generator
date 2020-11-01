@@ -15,10 +15,12 @@ var  generatePassword = function() {
   // Make sure that the user doesn't leave this blank
   if (!passwordLength) {
     window.alert("You must enter a valid value!");
+    return generatePassword();
   }
     // Make sure password is between 8 and 128 characters
     else if (passwordLength < 8 || passwordLength > 128) {
       passwordLength = window.alert("You must choose between 8 and 128 characters!");
+      return generatePassword();
     }
 
     else {
@@ -32,6 +34,7 @@ var  generatePassword = function() {
     // If user doesn't include any option, remind them to pick at least one
     if (!includeLowercase && !includeUppercase && !includeNumber && !includeCharacter) {
       passwordOptions = window.alert("You must choose at least one option!");
+      return generatePassword();
     }
 
     // Password generated with all 4 options selected
