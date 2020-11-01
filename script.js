@@ -1,5 +1,3 @@
-// Assignment code here
-
 // Password options and variables
 var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -25,7 +23,7 @@ var generatePassword = function() {
     }
 
     else {
-      // Goes through to confirm what the password will contain
+      // Goes through prompts to confirm what the password will contain
       var includeLowercase = window.confirm("Would you like your password to contain lowercase letters?");
       var includeUppercase = window.confirm("Would you like your password to contain UPPERCASE lettes?");
       var includeNumber = window.confirm("Would you like your password to contain numbers?");
@@ -56,7 +54,42 @@ var generatePassword = function() {
       passwordOptions = uppercase.concat(numbers, characters);
     }
 
-    // Pass
+    // Password generated with 2 options selected
+    else if (includeLowercase && includeUppercase) {
+      passwordOptions = lowercase.concat(uppercase);
+    }
+    else if (includeLowercase && includeNumber) {
+      passwordOptions = lowercase.concat(numbers);
+    }
+    else if (includeLowercase && includeCharacter) {
+      passwordOptions = lowercase.concat(characters);
+    }
+    else if (includeUppercase && includeNumber) {
+      passwordOptions = uppercase.concat(numbers);
+    }
+    else if (includeUppercase && includeCharacter) {
+      passwordOptions = uppercase.concat(characters);
+    }
+    else if (includeNumber && includeCharacter) {
+      passwordOptions = numbers.concat(characters);
+    }
+
+    // Password generated with 1 option selected
+    else if (includeLowercase) {
+      passwordOptions = lowercase;
+    }
+    else if (includeUppercase) {
+      passwordOptions = uppercase;
+    }
+    else if (includeNumber) {
+      passwordOptions = numbers;
+    }
+    else if (includeCharacter) {
+      passwordOptions = characters;
+    };
+
+    // Create array placeholder for what the length of the password will be
+
 
 }
 
