@@ -11,4 +11,4 @@ A website to generate a password based on the user's criteria. Creates a passwor
 ## Website
 
 ## Contribution
-Made with ❤️ by Joshua Beedle
+Made with  ❤️  by Joshua Beedle
